@@ -69,7 +69,7 @@ class ArticleController extends Controller
     {
         $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
 
-        $form = $this->createFormBuilder($article)->add('title', TextType::class, array('attr' => array('class' => 'form-control')))->add('body', TextareaType::class, array('required' => false, 'attr' => array('class' => 'form-control')))->add('save', SubmitType::class, array('label' => 'Update',
+        $form = $this->createFormBuilder($article)->add('title', TextType::class, array('attr' => array('class' => 'form-control')))->add('description', TextareaType::class, array('required' => false, 'attr' => array('class' => 'form-control')))->add('content', TextareaType::class, array('required' => false, 'attr' => array('class' => 'form-control')))->add('save', SubmitType::class, array('label' => 'Update',
             'attr' => array('class' => 'btn btn-primary mt-3')))->getForm();
 
         $form->handleRequest($request);
