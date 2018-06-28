@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %} Reddit Posts {% endblock %}
+{% block body %}
+    {% if posts %}
+        <table id="articles" class="table table-striped">
+            <thead>
+            <tr>
+                <th> Reddit Posts</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post.title }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p> No posts to display </p>
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+<script src="/public/js/main.js"></script>
+{% endblock %}
